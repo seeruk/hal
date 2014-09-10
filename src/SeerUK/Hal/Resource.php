@@ -208,6 +208,60 @@ class Resource implements ResourceInterface
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getVariable($name)
+    {
+        return $this->variables[$name];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVariables()
+    {
+        return $this->variables;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function hasVariable($name)
+    {
+        return isset($this->variables[$name]);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVariable($name, $value)
+    {
+        $this->variables[$name] = $value;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setVariables(array $variables)
+    {
+        $this->variables = $variables;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function unsetVariable($name)
+    {
+        unset($this->variables[$name]);
+
+        return $this;
+    }
+
+    /**
      * Pre-serialize event handler
      *
      * @Serializer\PreSerialize()

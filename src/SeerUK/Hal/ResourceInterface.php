@@ -128,4 +128,57 @@ interface ResourceInterface
      * @return ResourceInterface
      */
     public function removeResource($name);
+
+    /**
+     * Get a variable
+     *
+     * @param string $name
+     *
+     * @return mixed
+     */
+    public function getVariable($name);
+
+    /**
+     * Get variables
+     *
+     * @return array
+     */
+    public function getVariables();
+
+    /**
+     * Has variable?
+     *
+     * @param string $name
+     *
+     * @return boolean
+     */
+    public function hasVariable($name);
+
+    /**
+     * Set variable
+     *
+     * @param string $name
+     * @param mixed  $value
+     *
+     * @return ResourceInterface
+     */
+    public function setVariable($name, $value);
+
+    /**
+     * Set variables
+     *
+     * @param array $variables
+     *
+     * @return ResourceInterface
+     */
+    public function setVariables(array $variables);
+
+    /**
+     * Unset variable
+     *
+     * @param string $name
+     *
+     * @return ResourceInterface
+     */
+    public function unsetVariable($name);
 }
