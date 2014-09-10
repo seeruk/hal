@@ -128,4 +128,20 @@ interface ResourceInterface
      * @return ResourceInterface
      */
     public function removeResource($name);
+
+    /**
+     * Get data
+     *
+     * @return array
+     */
+    public function getData();
+
+    /**
+     * Public function set data
+     *
+     * @param array $data
+     *
+     * @return ResourceInterface
+     */
+    public function setData(array $data);
 }

@@ -41,7 +41,6 @@ class Resource implements ResourceInterface
         $this->resources = [];
     }
 
-
     /**
      * {@inheritDoc}
      */
@@ -190,6 +189,24 @@ class Resource implements ResourceInterface
     public function removeResource($name)
     {
         unset($this->resources[$name]);
+
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setData(array $data)
+    {
+        $this->data = $data;
 
         return $this;
     }
