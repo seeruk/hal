@@ -24,6 +24,11 @@ class Resource implements ResourceInterface
     /**
      * @var array
      */
+    protected $data;
+
+    /**
+     * @var array
+     */
     protected $links;
 
     /**
