@@ -12,6 +12,7 @@
 namespace SeerUK\Hal;
 
 use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\GenericSerializationVisitor;
 use SeerUK\Hal\LinkInterface;
 use SeerUK\Hal\ResourceInterface;
 
@@ -22,11 +23,6 @@ use SeerUK\Hal\ResourceInterface;
  */
 class Resource implements ResourceInterface
 {
-    /**
-     * @var array
-     */
-    protected $data;
-
     /**
      * @var array
      *
@@ -41,12 +37,20 @@ class Resource implements ResourceInterface
      */
     protected $resources;
 
+    /**
+     * @var array
+     *
+     * @Serializer\Inline
+     */
+    protected $variables;
+
 
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct(array $variables = array())
     {
+        $this->variables = $variables;
         $this->links     = [];
         $this->resources = [];
     }
@@ -199,24 +203,6 @@ class Resource implements ResourceInterface
     public function removeResource($name)
     {
         unset($this->resources[$name]);
-
-        return $this;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setData(array $data)
-    {
-        $this->data = $data;
 
         return $this;
     }
