@@ -1,0 +1,13 @@
+{
+    "name": "seeruk/hal",
+    "description": "PHP Implementation of the HAL Specification for PHP >= 5.5 and HHVM >= 3.2",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elliot Wright",
+            "email": "elliot@elliotwright.co"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
