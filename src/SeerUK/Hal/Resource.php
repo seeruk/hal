@@ -220,4 +220,20 @@ class Resource implements ResourceInterface
 
         return $this;
     }
+
+    /**
+     * Pre-serialize event handler
+     *
+     * @Serializer\PreSerialize()
+     */
+    protected function preSerialize()
+    {
+        if (empty($this->links)) {
+            $this->links = null;
+        }
+
+        if (empty($this->resources)) {
+            $this->resources = null;
+        }
+    }
 }
