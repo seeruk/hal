@@ -11,6 +11,7 @@
 
 namespace SeerUK\Hal;
 
+use JMS\Serializer\Annotation as Serializer;
 use SeerUK\Hal\LinkInterface;
 use SeerUK\Hal\ResourceInterface;
 
@@ -28,11 +29,15 @@ class Resource implements ResourceInterface
 
     /**
      * @var array
+     *
+     * @Serializer\SerializedName("_links")
      */
     protected $links;
 
     /**
      * @var array
+     *
+     * @Serializer\SerializedName("_embedded")
      */
     protected $resources;
 
